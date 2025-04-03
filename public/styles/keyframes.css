@@ -1,0 +1,78 @@
+@keyframes desplazar {
+    0% {
+        transform: translateX(350%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.fondo-scroll {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    z-index: -1; 
+    background: transparent;
+}
+
+.fondo-scroll .scroll {
+    display: inline-block;
+    white-space: nowrap; 
+    animation: desplazar 10s linear infinite;
+    color: #f3f3f3;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 2.3vh;
+    text-align: center;
+    position: relative;
+}
+
+#progress-table tbody tr {
+    animation: none;
+}
+table:not(#progress-table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    font-size: 1.1em;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: left;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#progress-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    margin: 50px 0;
+    font-size: 0.8em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Estilo para filas descalificadas */
+#progress-table tbody tr.disqualified {
+    background-color: rgb(255, 99, 71) !important;
+    color: white;
+    font-weight: bold;
+}
+
+
+/* Aplicar la animación a las filas de la tabla */
+#progress-table tbody tr {
+    animation: fadeInMove 0.5s ease-out;
+}
+
+/* Opcional: animación para cambio de fondo al reordenar */
+@keyframes changeBackground {
+    from {
+        background-color: #e9ecef;
+    }
+    to {
+        background-color: transparent;
+    }
+}

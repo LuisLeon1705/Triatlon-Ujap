@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progreso - Triatlón Carabobo 2025</title>
+  <link rel="icon" href="assets/ico.png">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/keyframes.css">
+  <link rel="stylesheet" href="styles/animation.css">
+  <!-- Carga de módulos JS necesarios -->
+  <script src="../src/JavaScript/utils.js" defer></script>
+  <script src="../src/JavaScript/progress.js" defer></script>
+  <script src="../src/JavaScript/main.js" defer></script>
+  <style>
+    /* Estilos para el botón dividido de selección de modo */
+    #simulation-mode {
+      display: flex;
+      border: 2px solid #c0c0c0;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 1em;
+      cursor: pointer;
+    }
+    .sim-mode {
+      flex: 1;
+      text-align: center;
+      padding: 10px 0;
+      background-color: #ccc;
+      color: #000;
+      transition: background-color 0.3s;
+    }
+    .sim-mode.selected {
+      color: #fff;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .sim-mode.selected#mode-rapida {
+      background-color: #FF8000; /* Color para el modo rápido */
+    }
+    .sim-mode.selected#mode-normal {
+      background-color: #0000C2; /* Color para el modo normal */
+    }
+    .sim-mode:not(:last-child) {
+      border-right: 1px solid #fff;
+    }
+    /* Estilos para los diferentes apartados de la competencia */
+    .caminata {
+      background-color: #8BC34A; /* Verde manzana */
+    }
+    .natacion {
+      background-color: #00BCD4; /* Azul agua clara */
+    }
+    .ciclismo {
+      background-color: #9E9E9E; /* Gris asfalto */
+    }
+    /* Estilos para el selector de orden de visualización */
+    #sort-order-container {
+      margin-bottom: 1em;
+      color: #fff;
+    }
+    /* Estilos para el formulario de participantes tardíos */
+    #late-join-form {
+      margin-top: 1em;
+      padding: 1em;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      background-color: rgba(255,255,255,0.9);
+    }
+    /* Estilos para los colores del podio */
+    tr[data-medal="gold"] {
+      background-color: #FFD700 !important; /* Dorado */
+    }
+    tr[data-medal="silver"] {
+      background-color: #C0C0C0 !important; /* Plateado */
+    }
+    tr[data-medal="bronze"] {
+      background-color: #CD7F32 !important; /* Bronce */
+    }
+  </style>
+</head>
+<body style="background: linear-gradient(to right, #0000C2, #FF8000);">
+  <button type="button" id="back-button" onclick="window.location.href='../index.html'"></button>
+  <button type="button" id="return-button" onclick="window.location.href='participants.html'"></button>
+  <div id="progress-container">
+    <h1>Progreso del Triatlón</h1>
+    <hr><br>
+    <!-- Se ingresa manualmente la fecha/hora de inicio -->
+    <div id="start-time-input-container">
+      <label for="start-datetime" style="color: #ffffff7e;">Fecha y Hora de Inicio:</label>
+      <input type="datetime-local" id="start-datetime" required>
+    </div>
+    <h3 id="start-time">HORA DE INICIO:</h3>
+  
+    <!-- Botón dividido para seleccionar el modo de simulación -->
+    <div id="simulation-mode">
+      <div id="mode-rapida" class="sim-mode">
+        Simulación Rápida<br>(X1000)
+      </div>
+      <div id="mode-normal" class="sim-mode">
+        Simulación Normal<br>(Maratón promedio)
+      </div>
+    </div>
+    <!-- Tabla de participantes -->
+    <div id="progress-table-container">
+      <table id="progress-table">
+        <thead style="font-family: 'Antonio'; font-size: 1.2em;">
+          <tr>
+            <th colspan="5">Participante</th>
+            <th colspan="4" class="caminata">Caminata (10Km)</th>
+            <th colspan="4" class="natacion">Natación (10Km)</th>
+            <th colspan="4" class="ciclismo">Ciclismo (30Km)</th>
+            <th colspan="4">General</th>
+            <th>Acciones</th>
+          </tr>
+          <tr style="background-color: #3a5f7a;">
+            <td>C.I.</td>
+            <td>Nombre</td>
+            <td>Municipio</td>
+            <td>Edad</td>
+            <td>Estado</td>
+            <td>Hora inicio</td>
+            <td>Hora fin</td>
+            <td>Distancia</td>
+            <td>Tiempo</td>
+            <td>Hora inicio</td>
+            <td>Hora fin</td>
+            <td>Distancia</td>
+            <td>Tiempo</td>
+            <td>Hora inicio</td>
+            <td>Hora fin</td>
+            <td>Distancia</td>
+            <td>Tiempo</td>
+            <td>Distancia total</td>
+            <td>Tiempo de recorrido</td>
+            <td>Hora fin</td>
+            <td>Status</td>
+            <td>Acciones</td>
+          </tr>
+        </thead>
+        <tbody id="progress-table-body">
+          <!-- Se llenará dinámicamente -->
+        </tbody>
+      </table>
+    </div>
+    <div class="button-group">
+      <button id="start-button">Iniciar</button>
+      <button id="restart-button">Reiniciar</button>
+    </div>
+    <div class="fondo-scroll">
+      <p class="scroll">Patrocinado por el estado de Carabobo.</p>
+    </div>
+    <br>
+    <p class="scroll">&copy; Triatlón Carabobo 2025. Todos los derechos reservados.</p> 
+  </div>
+</body>
+</html>
+

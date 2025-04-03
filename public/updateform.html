@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actualización - Triatlón Carabobo 2025</title>
+  <link rel="icon" href="assets/ico.png">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rell="stylesheet" href="styles/keyframes.css">
+  <!-- Se cargan los módulos correspondientes -->
+  <script src="../src/JavaScript/utils.js" defer></script>
+  <script src="../src/JavaScript/update.js" defer></script>
+  <script src="../src/JavaScript/main.js" defer></script>
+</head>
+<body>
+  <button type="button" id="back-button" onclick="window.location.href='../index.html'"></button>
+  <div id="main-container">
+    <h1 class="components-titles">Actualización de Participantes</h1>
+    <hr>
+    <form id="update-form">
+      <label for="updated-participant-name">Nombre completo</label>
+      <input type="text" id="updated-participant-name" name="name" placeholder="Nombre completo" required>
+
+      <label for="updated-participant-id">Cédula de Identidad</label>
+      <!-- Se usa "text" para permitir tanto cédulas como números de extranjería -->
+      <input type="text" id="updated-participant-id" name="id" placeholder="Cédula de Identidad" required>
+
+      <label for="updated-participant-municipality">Municipio</label>
+      <select id="updated-participant-municipality" name="municipality" required>
+        <option value="" disabled selected>Seleccione un municipio</option>
+        <option value="Juan José Mora">Juan José Mora</option>
+        <option value="Puerto Cabello">Puerto Cabello</option>
+        <option value="Bejuma">Bejuma</option>
+        <option value="Montalbán">Montalbán</option>
+        <option value="Miranda">Miranda</option>
+        <option value="Libertador">Libertador</option>
+        <option value="Naguanagua">Naguanagua</option>
+        <option value="Valencia">Valencia</option>
+        <option value="Carlos Arvelo">Carlos Arvelo</option>
+        <option value="San Diego">San Diego</option>
+        <option value="Los Guayos">Los Guayos</option>
+        <option value="Guacara">Guacara</option>
+        <option value="San Joaquín">San Joaquín</option>
+        <option value="Diego Ibarra">Diego Ibarra</option>
+      </select>
+
+      <label for="updated-participant-age">Edad</label>
+      <input type="number" id="updated-participant-age" name="age" placeholder="Edad" min="0" required>
+
+      <div class="button-group">
+        <button type="submit">Actualizar</button>
+        <button type="button" id="cancel-button">Cancelar</button>
+      </div>
+    </form>
+  </div>
+  <div class="fondo-scroll">
+    <p class="scroll">Patrocinado por el estado de Carabobo.</p>
+  </div>
+  <br>
+  <p class="scroll">&copy; Triatlón Carabobo 2025. Todos los derechos reservados.</p> 
+</body>
+</html>

@@ -1,0 +1,62 @@
+/* Estilos para las animaciones de la tabla de progreso */
+
+/* Animación para resaltar cambios de posición */
+@keyframes highlightRow {
+    0% {
+      background-color: rgba(255, 255, 0, 0.5);
+    }
+    50% {
+      background-color: rgba(255, 255, 0, 0.3);
+    }
+    100% {
+      background-color: transparent;
+    }
+  }
+  
+  /* Clase para filas que cambian de posición */
+  .position-changed {
+    animation: highlightRow 1.5s ease-out;
+  }
+  
+  /* Transición suave para las filas de la tabla */
+  .table-row {
+    transition: all 0.8s ease-out;
+  }
+  
+  /* Animación para los cambios de medalla */
+  @keyframes medalPulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Aplicar animación a las filas con medallas */
+  tr[style*="background-color: #FFD700"],
+  tr[style*="background-color: #C0C0C0"],
+  tr[style*="background-color: #CD7F32"] {
+    animation: medalPulse 1s ease-in-out;
+  }
+  
+  /* Animación para la descalificación */
+  @keyframes disqualified {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.6;
+    }
+  }
+  
+  .disqualified {
+    animation: disqualified 0.5s forwards;
+    text-decoration: line-through;
+    color: #999;
+  }
+  
+  

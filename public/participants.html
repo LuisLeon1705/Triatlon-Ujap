@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Participantes - Triatlón Carabobo 2025</title>
+  <link rel="icon" href="assets/ico.png">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/keyframes.css">
+  <!-- Se cargan los módulos necesarios para manejar a los participantes -->
+  <script src="../src/JavaScript/utils.js" defer></script>
+  <script src="../src/JavaScript/participants.js" defer></script>
+  <script src="../src/JavaScript/main.js" defer></script>
+</head>
+<body>
+  <button type="button" id="back-button" onclick="window.location.href='../index.html'"></button>
+  <div id="main-container">
+    <h1 class="components-titles">Participantes</h1>
+    <hr>
+    <div id="participants-container">
+      <table>
+        <thead>
+          <tr>
+            <th>C.I.</th>
+            <th>Nombre</th>
+            <th>Municipio</th>
+            <th>Edad</th>
+            <th>Participará</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="participants-table-body">
+          <!-- Se llenará dinámicamente -->
+        </tbody>
+      </table>
+    </div>
+    <div class="button-group">
+      <button id="start-button">Iniciar Triatlón</button>
+      <button id="reset-button">Eliminar registros</button>
+      <button id="register-button" onclick="window.location.href = 'registration.html'">Registro</button>
+    </div>
+  </div>
+  <div class="fondo-scroll">
+    <p class="scroll">Patrocinado por el estado de Carabobo.</p>
+  </div>
+  <br>
+  <p class="scroll">&copy; Triatlón Carabobo 2025. Todos los derechos reservados.</p> 
+</body>
+</html>
